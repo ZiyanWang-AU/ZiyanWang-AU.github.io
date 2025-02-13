@@ -6,50 +6,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZiyanWang - AU's Personal Page</title>
     <style>
+        /* 全局样式 */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #34495e;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        nav ul li {
+            display: inline;
         }
 
+        nav ul li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #2c3e50;
+        }
+
+        /* 主要内容区域样式 */
         main {
-            padding: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 2em;
             margin-bottom: 20px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+        }
+
+        section a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        section a:hover {
+            color: #2980b9;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
         }
     </style>
 </head>
 
 <body>
+    <!-- 头部 -->
     <header>
-        <h1>ZiyanWang - AU's Personal Page</h1>
+        <h1>ZiyanWang - AU</h1>
+        <p>Your professional introduction here, such as your job title or main skills.</p>
     </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#ppt-portfolio">PPT Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容 -->
     <main>
-        <section>
+        <!-- 关于我 -->
+        <section id="about">
             <h2>About Me</h2>
-            <p>这里可以详细介绍一下你自己，比如你的专业、工作经历、兴趣爱好等。</p>
+            <p>
+                Strong Digital Transformation and Innovation Leadership: Successfully led the digital transformation of the family business at
+age 18, standardizing inventory, sales, performance, and cash flow management, and expanded physical stores to two regions through
+TikTok live streaming and WeChat community integration.
+Extensive Strategy Consulting Experience: Acted as a strategic advisor for leading enterprises and projects at Cushman &
+Wakefield, deeply involved in planning and implementing large projects, developing differentiated growth strategies and market
+entry plans.
+Entrepreneurship and Marketing Excellence: Founded EnglishGo, an online English teaching platform at age 19, identifying
+market needs and developing differentiated products, implementing multi-platform marketing strategies to improve user conversion
+rates.
+International Perspective and Educational Background: With a global academic background spanning China, Canada, Australia,
+and Singapore, recipient of multiple scholarships and awards, possessing solid foundational knowledge and broad outlook.
+            </p>
         </section>
-        <section>
+
+        <!-- 简历 -->
+        <section id="resume">
             <h2>Resume</h2>
-            <p><a href="ZiyanWang Resume.pdf">点击下载我的简历</a></p>
+            <p>You can download my resume by clicking the link below:</p>
+            <a href="ZiyanWang Resume.pdf">Download My Resume</a>
         </section>
-        <section>
+
+        <!-- PPT 作品集 -->
+        <section id="ppt-portfolio">
             <h2>PPT Portfolio</h2>
             <ul>
-                <li><a href="PPT case1.pdf">PPT 案例 1</a></li>
-                <li><a href="PPT case2.pdf">PPT 案例 2</a></li>
+                <li><a href="PPT case1.pdf">PPT Case 1</a></li>
+                <li><a href="PPT case2.pdf">PPT Case 2</a></li>
             </ul>
         </section>
     </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025 ZiyanWang. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
