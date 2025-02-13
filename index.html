@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZiyanWang's Personal Page</title>
+    <title>ZiyanWang - AU's Personal Page</title>
     <style>
         /* 全局样式 */
         body {
@@ -27,12 +27,28 @@
 
         /* 头部样式 */
         header {
-            background: linear-gradient(45deg, #2c3e50, #34495e);
+            background: #FF8C00; /* 高级橙色 */
             color: white;
             text-align: center;
-            padding: 100px 0;
+            padding: 50px 0;
             position: relative;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
         }
 
         header h1 {
@@ -135,6 +151,10 @@
             animation-delay: 2.5s;
         }
 
+        section:nth-child(4) {
+            animation-delay: 3s;
+        }
+
         @keyframes fadeInSection {
             from {
                 opacity: 0;
@@ -200,6 +220,26 @@
             transform: scale(1.05);
         }
 
+        /* 生活照样式 */
+        .life-photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .life-photo {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .life-photo img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         /* 页脚样式 */
         footer {
             background-color: #2c3e50;
@@ -213,8 +253,13 @@
 <body>
     <!-- 头部 -->
     <header>
-        <h1>Ziyan Wang</h1>
-        <p>Management Trainee | Consulting | Strategy</p>
+        <div class="header-content">
+            <img class="profile-pic" src="touxiang.jpg" alt="Profile Picture">
+            <div>
+                <h1>Ziyan Wang</h1>
+                <p>Management Trainee | Consulting | Strategy</p>
+            </div>
+        </div>
     </header>
 
     <!-- 导航栏 -->
@@ -223,6 +268,7 @@
             <li><a href="#about">About Me</a></li>
             <li><a href="#resume">Resume</a></li>
             <li><a href="#ppt-portfolio">PPT Portfolio</a></li>
+            <li><a href="#life-photos">Life Photos</a></li>
         </ul>
     </nav>
 
@@ -251,6 +297,25 @@
                 <li><a href="PPT case1.pdf">PPT Case 1</a></li>
                 <li><a href="PPT case2.pdf">PPT Case 2</a></li>
             </ul>
+        </section>
+
+        <!-- 生活照 -->
+        <section id="life-photos">
+            <h2>Life Photos</h2>
+            <div class="life-photos">
+                <div class="life-photo">
+                    <img src="shenghuozhao1.jpg" alt="High school life in Canada">
+                    <p>High school life in Canada</p>
+                </div>
+                <div class="life-photo">
+                    <img src="shenghuozhao2.jpg" alt="Speech at the University of Sydney">
+                    <p>Speech at the University of Sydney</p>
+                </div>
+                <div class="life-photo">
+                    <img src="shenghuozhao3.jpg" alt="Internship at Shanghai Jiao Tong University">
+                    <p>Internship at Shanghai Jiao Tong University</p>
+                </div>
+            </div>
         </section>
     </main>
 
