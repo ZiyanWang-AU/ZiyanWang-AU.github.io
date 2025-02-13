@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZiyanWang - AU's Personal Page</title>
+    <title>ZiyanWang's Personal Page</title>
     <style>
         /* 全局样式 */
         body {
@@ -13,30 +13,72 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         /* 头部样式 */
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(45deg, #2c3e50, #34495e);
             color: white;
             text-align: center;
-            padding: 60px 0;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin-bottom: 10px;
+            transform: translateY(-50px);
+            opacity: 0;
+            animation: slideDown 1s ease-out 0.5s forwards;
         }
 
         header p {
-            font-size: 1.2em;
-            opacity: 0.8;
+            font-size: 1.5em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* 导航栏样式 */
         nav {
             background-color: #34495e;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -55,11 +97,12 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         nav ul li a:hover {
             background-color: #2c3e50;
+            transform: scale(1.1);
         }
 
         /* 主要内容区域样式 */
@@ -75,6 +118,32 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
             margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 1s ease-out forwards;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 1.5s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 2.5s;
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         section h2 {
@@ -82,6 +151,27 @@
             margin-bottom: 20px;
             border-bottom: 2px solid #34495e;
             padding-bottom: 10px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            animation: underline 1s ease-out 3s forwards;
+        }
+
+        @keyframes underline {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
         }
 
         section p {
@@ -101,11 +191,13 @@
         section a {
             color: #3498db;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
         }
 
         section a:hover {
             color: #2980b9;
+            transform: scale(1.05);
         }
 
         /* 页脚样式 */
@@ -121,8 +213,8 @@
 <body>
     <!-- 头部 -->
     <header>
-        <h1>ZiyanWang - AU</h1>
-        <p>Your professional introduction here, such as your job title or main skills.</p>
+        <h1>Ziyan Wang</h1>
+        <p>Management Trainee | Consulting | Strategy</p>
     </header>
 
     <!-- 导航栏 -->
@@ -139,19 +231,10 @@
         <!-- 关于我 -->
         <section id="about">
             <h2>About Me</h2>
-            <p>
-                Strong Digital Transformation and Innovation Leadership: Successfully led the digital transformation of the family business at
-age 18, standardizing inventory, sales, performance, and cash flow management, and expanded physical stores to two regions through
-TikTok live streaming and WeChat community integration.
-Extensive Strategy Consulting Experience: Acted as a strategic advisor for leading enterprises and projects at Cushman &
-Wakefield, deeply involved in planning and implementing large projects, developing differentiated growth strategies and market
-entry plans.
-Entrepreneurship and Marketing Excellence: Founded EnglishGo, an online English teaching platform at age 19, identifying
-market needs and developing differentiated products, implementing multi-platform marketing strategies to improve user conversion
-rates.
-International Perspective and Educational Background: With a global academic background spanning China, Canada, Australia,
-and Singapore, recipient of multiple scholarships and awards, possessing solid foundational knowledge and broad outlook.
-            </p>
+            <p><strong>Strong Digital Transformation and Innovation Leadership:</strong> Successfully led the digital transformation of the family business at age 18, standardizing inventory, sales, performance, and cash flow management, and expanded physical stores to two regions through TikTok live streaming and WeChat community integration.</p>
+            <p><strong>Extensive Strategy Consulting Experience:</strong> Acted as a strategic advisor for leading enterprises and projects at Cushman & Wakefield, deeply involved in planning and implementing large projects, developing differentiated growth strategies and market entry plans.</p>
+            <p><strong>Entrepreneurship and Marketing Excellence:</strong> Founded EnglishGo, an online English teaching platform at age 19, identifying market needs and developing differentiated products, implementing multi - platform marketing strategies to improve user conversion rates.</p>
+            <p><strong>International Perspective and Educational Background:</strong> With a global academic background spanning China, Canada, Australia, and Singapore, recipient of multiple scholarships and awards, possessing solid foundational knowledge and broad outlook.</p>
         </section>
 
         <!-- 简历 -->
@@ -173,7 +256,7 @@ and Singapore, recipient of multiple scholarships and awards, possessing solid f
 
     <!-- 页脚 -->
     <footer>
-        <p>&copy; 2025 ZiyanWang. All rights reserved.</p>
+        <p>&copy; 2025 Ziyan Wang. All rights reserved.</p>
     </footer>
 </body>
 
