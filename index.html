@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZiyanWang - AU's Personal Page</title>
+    <title>ZiyanWang's Personal Page</title>
     <style>
-        /* 全局样式 */
+        /* Global styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -20,14 +20,15 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
 
-        /* 头部样式 */
+        /* Header styles */
         header {
-            background: #FF8C00; /* 高级橙色 */
+            background: #2C3E50; /* Dark blue */
             color: white;
             text-align: center;
             padding: 50px 0;
@@ -44,8 +45,8 @@
         }
 
         .profile-pic {
-            width: 100px;
-            height: 100px;
+            width: 150px; /* Enlarged profile picture */
+            height: 150px; /* Enlarged profile picture */
             border-radius: 50%;
             margin-right: 20px;
             object-fit: cover;
@@ -70,6 +71,7 @@
                 transform: translateY(-50px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -81,13 +83,14 @@
                 transform: translateY(20px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
             }
         }
 
-        /* 导航栏样式 */
+        /* Navigation bar styles */
         nav {
             background-color: #34495e;
             text-align: center;
@@ -121,7 +124,7 @@
             transform: scale(1.1);
         }
 
-        /* 主要内容区域样式 */
+        /* Main content styles */
         main {
             padding: 40px;
             max-width: 1000px;
@@ -160,6 +163,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -189,6 +193,7 @@
             from {
                 width: 0;
             }
+
             to {
                 width: 100%;
             }
@@ -220,7 +225,7 @@
             transform: scale(1.05);
         }
 
-        /* 生活照样式 */
+        /* Life photos styles */
         .life-photos {
             display: flex;
             flex-wrap: wrap;
@@ -240,86 +245,139 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* 页脚样式 */
+        /* Footer styles */
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
             padding: 20px 0;
         }
+
+        .resume-text {
+            font-size: 1.4em; /* Adjusted font size */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Me Section */
+        .contact-info {
+            font-size: 1.1em;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #2980b9;
+        }
     </style>
 </head>
 
 <body>
-    <!-- 头部 -->
+    <!-- Header -->
     <header>
         <div class="header-content">
             <img class="profile-pic" src="touxiang.jpg" alt="Profile Picture">
             <div>
                 <h1>Ziyan Wang</h1>
-                <p>Management Trainee | Consulting | Strategy</p>
+                <p>Management | Consulting | Strategy</p>
             </div>
         </div>
     </header>
 
-    <!-- 导航栏 -->
+    <!-- Navigation bar -->
     <nav>
         <ul>
             <li><a href="#about">About Me</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#ppt-portfolio">PPT Portfolio</a></li>
-            <li><a href="#life-photos">Life Photos</a></li>
+            <li><a href="#academic-portfolio">Academic Portfolio</a></li>
+            <li><a href="#work-portfolio">Work Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#extracurricular-activities">Extracurricular Activities</a></li>
+            <li><a href="#contact-me">Contact Me</a></li> <!-- Added "Contact Me" -->
         </ul>
     </nav>
 
-    <!-- 主要内容 -->
+    <!-- Main content -->
     <main>
-        <!-- 关于我 -->
+        <!-- About Me -->
         <section id="about">
             <h2>About Me</h2>
             <p><strong>Strong Digital Transformation and Innovation Leadership:</strong> Successfully led the digital transformation of the family business at age 18, standardizing inventory, sales, performance, and cash flow management, and expanded physical stores to two regions through TikTok live streaming and WeChat community integration.</p>
             <p><strong>Extensive Strategy Consulting Experience:</strong> Acted as a strategic advisor for leading enterprises and projects at Cushman & Wakefield, deeply involved in planning and implementing large projects, developing differentiated growth strategies and market entry plans.</p>
             <p><strong>Entrepreneurship and Marketing Excellence:</strong> Founded EnglishGo, an online English teaching platform at age 19, identifying market needs and developing differentiated products, implementing multi - platform marketing strategies to improve user conversion rates.</p>
             <p><strong>International Perspective and Educational Background:</strong> With a global academic background spanning China, Canada, Australia, and Singapore, recipient of multiple scholarships and awards, possessing solid foundational knowledge and broad outlook.</p>
-        </section>
 
-        <!-- 简历 -->
-        <section id="resume">
-            <h2>Resume</h2>
-            <p>You can download my resume by clicking the link below:</p>
+            <!-- Resume (Merged into About Me) -->
+            <div class="resume-text">Resume: You can download my resume by clicking the link below:</div>
             <a href="ZiyanWang Resume.pdf">Download My Resume</a>
         </section>
 
-        <!-- PPT 作品集 -->
-        <section id="ppt-portfolio">
-            <h2>PPT Portfolio</h2>
+        <!-- Academic Portfolio -->
+        <section id="academic-portfolio">
+            <h2>Academic Portfolio</h2>
             <ul>
-                <li><a href="PPT case1.pdf">PPT Case 1</a></li>
-                <li><a href="PPT case2.pdf">PPT Case 2</a></li>
+                <li><a href="case1.pdf">Case 1</a></li>
+                <li><a href="case2.pdf">Case 2</a></li>
+                <li><a href="case3.pdf">Case 3</a></li>
             </ul>
         </section>
 
-        <!-- 生活照 -->
-        <section id="life-photos">
-            <h2>Life Photos</h2>
+        <!-- Work Portfolio -->
+        <section id="work-portfolio">
+            <h2>Work Portfolio</h2>
+            <ul>
+                <li><a href="workcase1.pdf">Case 1</a></li>
+                <li><a href="workcase2.pdf">Case 2</a></li>
+                <li><a href="workcase3.pdf">Case 3</a></li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Music1 - <a href="Music.mp4">Piano Video</a></li>
+                <li>Music2 - <a href="Portatone.pdf">Portatone</a></li>
+                <li>Dance1 - <a href="Dance1.mp4">Dance Video1</a></li>
+                <li>Dance2 - <a href="Dance2.mp4">Dance Video2</a></li>
+                <li>Japanese - <a href="Japanese.mp4">Japanese Video</a></li>
+                <li>Tableau1 - <a href="Tableau certificate1.pdf">Tableau Certificate1</a></li>
+                <li>Tableau2 - <a href="Tableau certificate2.pdf">Tableau Certificate2</a></li>
+            </ul>
+        </section>
+
+        <!-- Extracurricular Activities -->
+        <section id="extracurricular-activities">
+            <h2>Extracurricular Activities</h2>
             <div class="life-photos">
                 <div class="life-photo">
-                    <img src="shenghuozhao1.jpg" alt="High school life in Canada">
-                    <p>High school life in Canada</p>
+                    <img src="extracurricular1.jpg" alt="Activity 1">
+                    <p>Activity 1</p>
                 </div>
                 <div class="life-photo">
-                    <img src="shenghuozhao2.jpg" alt="Speech at the University of Sydney">
-                    <p>Speech at the University of Sydney</p>
+                    <img src="extracurricular2.jpg" alt="Activity 2">
+                    <p>Activity 2</p>
                 </div>
-                <div class="life-photo">
-                    <img src="shenghuozhao3.jpg" alt="Internship at Shanghai Jiao Tong University">
-                    <p>Internship at Shanghai Jiao Tong University</p>
-                </div>
+            </div>
+        </section>
+
+        <!-- Contact Me -->
+        <section id="contact-me">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Phone: +86 17320488546</p>
+                <p>Email: <a href="mailto:wangziyan_2020au@126.com">wangziyan_2020au@126.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/612423237055">+61 423237055</a></p>
+                <p>WeChat: Boche666</p>
             </div>
         </section>
     </main>
 
-    <!-- 页脚 -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Ziyan Wang. All rights reserved.</p>
     </footer>
