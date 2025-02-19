@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZiyanWang's Personal Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Global styles */
         body {
@@ -17,18 +18,13 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Header styles */
         header {
-            background: #2C3E50; /* Dark blue */
+            background: #2C3E50;
             color: white;
             text-align: center;
             padding: 50px 0;
@@ -45,8 +41,8 @@
         }
 
         .profile-pic {
-            width: 150px; /* Enlarged profile picture */
-            height: 150px; /* Enlarged profile picture */
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin-right: 20px;
             object-fit: cover;
@@ -67,30 +63,16 @@
         }
 
         @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Navigation bar styles */
+        /* Navigation bar */
         nav {
             background-color: #34495e;
             text-align: center;
@@ -124,7 +106,7 @@
             transform: scale(1.1);
         }
 
-        /* Main content styles */
+        /* Main content */
         main {
             padding: 40px;
             max-width: 1000px;
@@ -142,32 +124,14 @@
             animation: fadeInSection 1s ease-out forwards;
         }
 
-        section:nth-child(1) {
-            animation-delay: 1.5s;
-        }
-
-        section:nth-child(2) {
-            animation-delay: 2s;
-        }
-
-        section:nth-child(3) {
-            animation-delay: 2.5s;
-        }
-
-        section:nth-child(4) {
-            animation-delay: 3s;
-        }
+        section:nth-child(1) { animation-delay: 1.5s; }
+        section:nth-child(2) { animation-delay: 2s; }
+        section:nth-child(3) { animation-delay: 2.5s; }
+        section:nth-child(4) { animation-delay: 3s; }
 
         @keyframes fadeInSection {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         section h2 {
@@ -190,27 +154,13 @@
         }
 
         @keyframes underline {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-        section p {
-            line-height: 1.6;
-            margin-bottom: 20px;
+            from { width: 0; }
+            to { width: 100%; }
         }
 
         section ul {
             list-style-type: disc;
             padding-left: 20px;
-        }
-
-        section ul li {
-            margin-bottom: 10px;
         }
 
         section a {
@@ -225,27 +175,128 @@
             transform: scale(1.05);
         }
 
-        /* Life photos styles */
-        .life-photos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        /* Skills 样式 */
+        .skill-category {
+            margin: 15px 0;
+            line-height: 1.6;
         }
 
-        .life-photo {
-            margin: 20px;
-            text-align: center;
+        .skill-category strong {
+            display: inline-block;
+            min-width: 100px;
+            margin-right: 15px;
+            color: #2c3e50;
         }
 
-        .life-photo img {
-            width: 200px;
-            height: 200px;
+        .skill-category a {
+            margin: 0 8px;
+            position: relative;
+        }
+
+        .skill-category a:not(:last-child)::after {
+            content: "｜";
+            position: absolute;
+            right: -12px;
+            color: #666;
+        }
+
+        /* 横向滚动相册 */
+        .scroll-gallery {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 15px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #3498db #f1f1f1;
+        }
+
+        .scroll-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-gallery::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .scroll-gallery::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 4px;
+        }
+
+        .scroll-gallery img {
+            display: inline-block;
+            width: 220px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        /* Footer styles */
+        .scroll-gallery img:hover {
+            transform: scale(1.08);
+        }
+
+        /* Contact Me 新样式 */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 1.8em;
+            margin-right: 20px;
+            min-width: 40px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .contact-details p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #495057;
+        }
+
+        .contact-details a {
+            color: #3498db;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .contact-details a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+        }
+
+        .contact-details a:hover::after {
+            width: 100%;
+        }
+
+        /* Footer */
         footer {
             background-color: #2c3e50;
             color: white;
@@ -254,31 +305,14 @@
         }
 
         .resume-text {
-            font-size: 1.4em; /* Adjusted font size */
+            font-size: 1.4em;
             font-weight: bold;
             margin-bottom: 10px;
-        }
-
-        /* Contact Me Section */
-        .contact-info {
-            font-size: 1.1em;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .contact-info a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            color: #2980b9;
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <div class="header-content">
             <img class="profile-pic" src="touxiang.jpg" alt="Profile Picture">
@@ -289,7 +323,6 @@
         </div>
     </header>
 
-    <!-- Navigation bar -->
     <nav>
         <ul>
             <li><a href="#about">About Me</a></li>
@@ -297,90 +330,171 @@
             <li><a href="#work-portfolio">Work Portfolio</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#extracurricular-activities">Extracurricular Activities</a></li>
-            <li><a href="#contact-me">Contact Me</a></li> <!-- Added "Contact Me" -->
+            <li><a href="#contact-me">Contact Me</a></li>
         </ul>
     </nav>
 
-    <!-- Main content -->
     <main>
-        <!-- About Me -->
         <section id="about">
             <h2>About Me</h2>
-            <p><strong>Strong Digital Transformation and Innovation Leadership:</strong> Successfully led the digital transformation of the family business at age 18, standardizing inventory, sales, performance, and cash flow management, and expanded physical stores to two regions through TikTok live streaming and WeChat community integration.</p>
-            <p><strong>Extensive Strategy Consulting Experience:</strong> Acted as a strategic advisor for leading enterprises and projects at Cushman & Wakefield, deeply involved in planning and implementing large projects, developing differentiated growth strategies and market entry plans.</p>
-            <p><strong>Entrepreneurship and Marketing Excellence:</strong> Founded EnglishGo, an online English teaching platform at age 19, identifying market needs and developing differentiated products, implementing multi - platform marketing strategies to improve user conversion rates.</p>
-            <p><strong>International Perspective and Educational Background:</strong> With a global academic background spanning China, Canada, Australia, and Singapore, recipient of multiple scholarships and awards, possessing solid foundational knowledge and broad outlook.</p>
-
-            <!-- Resume (Merged into About Me) -->
-            <div class="resume-text">Resume: You can download my resume by clicking the link below:</div>
+            <p><strong>Strong Digital Transformation and Innovation Leadership:</strong><br> Successfully led the digital transformation of the family business at age 18, standardizing inventory, sales, performance, and cash flow management, and expanded physical stores to two regions through TikTok live streaming and WeChat community integration.</p>
+            <p><strong>Extensive Strategy Consulting Experience:</strong><br> Acted as a strategic advisor for leading enterprises and projects at Cushman & Wakefield, deeply involved in planning and implementing large projects, developing differentiated growth strategies and market entry plans.</p>
+            <p><strong>Entrepreneurship and Marketing Excellence:</strong><br> Founded EnglishGo, an online English teaching platform at age 19, identifying market needs and developing differentiated products, implementing multi - platform marketing strategies to improve user conversion rates.</p>
+            <p><strong>International Perspective and Educational Background:</strong><br> With a global academic background spanning China, Canada, Australia, and Singapore, recipient of multiple scholarships and awards, possessing solid foundational knowledge and broad outlook.</p>
+            <div class="resume-text">Resume:</div>
             <a href="ZiyanWang Resume.pdf">Download My Resume</a>
         </section>
 
-        <!-- Academic Portfolio -->
         <section id="academic-portfolio">
             <h2>Academic Portfolio</h2>
             <ul>
-                <li><a href="case1.pdf">Case 1</a></li>
-                <li><a href="case2.pdf">Case 2</a></li>
-                <li><a href="case3.pdf">Case 3</a></li>
+                <li><a href="BYDs Path to Globalization.pdf">BYDs Path to Globalization</a></li>
+                <li><a href="Tech Frontiers in Healthcare.pdf">Tech Frontiers in Healthcare</a></li>
+                <li><a href="Magic fit techology pitch.pdf">Magic fit techology pitch</a></li>
+                <li><a href="Has South Africa really been better governed after becoming a democracy?.pdf">Has South Africa really been better governed after becoming a democracy?</a></li>
+                <li><a href="Patpet.pdf">Patpet-Revolutionising health & wellbeing of our four-leg families</a></li>
             </ul>
         </section>
 
-        <!-- Work Portfolio -->
         <section id="work-portfolio">
             <h2>Work Portfolio</h2>
             <ul>
-                <li><a href="workcase1.pdf">Case 1</a></li>
-                <li><a href="workcase2.pdf">Case 2</a></li>
-                <li><a href="workcase3.pdf">Case 3</a></li>
+                <li><a href="ABB/Sustainability & Digitalization for the Aviation Industry.pdf">ABB/Sustainability & Digitalization for the Aviation Industry</a></li>
+                <li><a href="Leading Enterprise Project Review for the Yulin Agricultural Mall Planning and Consulting Project.pdf">Leading Enterprise Project Review for the Yulin Agricultural Mall Planning and Consulting Project</a></li>
+                <li><a href="Research Service Sample Report on the Chengdu South Apartment Market">Research Service Sample Report on the Chengdu South Apartment Market</a></li>
             </ul>
         </section>
 
-        <!-- Skills -->
         <section id="skills">
             <h2>Skills</h2>
             <ul>
-                <li>Music1 - <a href="Music.mp4">Piano Video</a></li>
-                <li>Music2 - <a href="Portatone.pdf">Portatone</a></li>
-                <li>Dance1 - <a href="Dance1.mp4">Dance Video1</a></li>
-                <li>Dance2 - <a href="Dance2.mp4">Dance Video2</a></li>
-                <li>Japanese - <a href="Japanese.mp4">Japanese Video</a></li>
-                <li>Tableau1 - <a href="Tableau certificate1.pdf">Tableau Certificate1</a></li>
-                <li>Tableau2 - <a href="Tableau certificate2.pdf">Tableau Certificate2</a></li>
+                <li class="skill-category">
+                    <strong>Music</strong>
+                    <a href="Music.mp4">Piano Video</a>
+                    <a href="Portatone.pdf">Portatone Level 10 Chinese Musicians Association Certification</a>
+                </li>
+                <li class="skill-category">
+                    <strong>Dance</strong>
+                    <a href="Dance1.mp4">Street Dance Video</a>
+                    <a href="Dance2.mp4">Urban Dance Video</a>
+                </li>
+                <li class="skill-category">
+                    <strong>Japanese</strong>
+                    <a href="Japanese.mp4">Talking Video</a>
+                </li>
+                <li class="skill-category">
+                    <strong>Tableau</strong>
+                    <a href="Tableau certificate1.pdf">Certificate of Analyzing Data</a>
+                    <a href="Tableau certificate2.pdf">Certificate of Creating Dashboards</a>
+                </li>
             </ul>
         </section>
 
-        <!-- Extracurricular Activities -->
         <section id="extracurricular-activities">
-            <h2>Extracurricular Activities</h2>
-            <div class="life-photos">
-                <div class="life-photo">
-                    <img src="extracurricular1.jpg" alt="Activity 1">
-                    <p>Activity 1</p>
+            <h2>Extracurricular Activities & Awards</h2>
+            <div class="scroll-gallery">
+                <!-- 每个活动项用div包裹 -->
+                <div class="activity-item">
+                    <img src="extracurricular1.jpg" alt="Volunteering">
+                    <p class="activity-caption">Community Volunteering</p>
                 </div>
-                <div class="life-photo">
-                    <img src="extracurricular2.jpg" alt="Activity 2">
-                    <p>Activity 2</p>
+                <div class="activity-item">
+                    <img src="extracurricular2.jpg" alt="Sports Event">
+                    <p class="activity-caption">Film Festival</p>
+                </div>
+                <div class="activity-item">
+                    <img src="extracurricular3.jpg" alt="Club Activity">
+                    <p class="activity-caption">Voice of China</p>
+                </div>
+                <div class="activity-item">
+                    <img src="extracurricular4.jpg" alt="Team Building">
+                    <p class="activity-caption">Dean's List of Excellence</p>
+                </div>
+                <div class="activity-item">
+                    <img src="extracurricular5.png" alt="Workshop">
+                    <p class="activity-caption">Student Club</p>
+                </div>
+                <div class="activity-item">
+                    <img src="extracurricular6.png" alt="Conference">
+                    <p class="activity-caption">Charities Aid Foundation</p>
                 </div>
             </div>
         </section>
+        
+        <style>
+        /* 新增样式 */
+        .activity-item {
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: top;
+            text-align: center;
+        }
+        
+        .activity-caption {
+            margin: 10px 0 0;
+            font-size: 0.95em;
+            color: #444;
+            font-weight: 500;
+            white-space: normal;
+            max-width: 220px;
+        }
+        
+        /* 调整原有图片样式 */
+        .scroll-gallery img {
+            display: block;
+            width: 220px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        </style>
 
-        <!-- Contact Me -->
         <section id="contact-me">
             <h2>Contact Me</h2>
-            <div class="contact-info">
-                <p>Phone: +86 17320488546</p>
-                <p>Email: <a href="mailto:wangziyan_2020au@126.com">wangziyan_2020au@126.com</a></p>
-                <p>WhatsApp: <a href="https://wa.me/612423237055">+61 423237055</a></p>
-                <p>WeChat: Boche666</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <p>+86 17320488546</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <p><a href="mailto:wangziyan_2020au@126.com">wangziyan@126.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <p><a href="https://wa.me/612423237055">+61 423237055</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-weixin"></i>
+                    </div>
+                    <div class="contact-details">
+                        <p>Boche666</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Ziyan Wang. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
