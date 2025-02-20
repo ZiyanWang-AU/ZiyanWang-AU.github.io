@@ -341,6 +341,22 @@
             transform: translateY(-2px);
         }
 
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .about-photo {
+            width: 300px;
+            height: 382px; /* 根据1264×1609比例计算 */
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(15, 76, 129, 0.15);
+            flex-shrink: 0;
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -369,6 +385,16 @@
             section {
                 padding: 25px;
             }
+
+            .about-content {
+                flex-direction: column;
+            }
+            .about-photo {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -383,7 +409,7 @@
             <img class="profile-pic" src="touxiang.jpg" alt="Ziyan Wang">
             <div>
                 <h1>Ziyan Wang</h1>
-                <p>Looking for Management Trainee, Strategy, Consulting jobs</p>
+                <p>Looking for Management Trainee ｜ Strategy ｜ Consulting jobs</p>
             </div>
         </div>
     </header>
@@ -395,27 +421,34 @@
             <li><a href="#work-portfolio">Work</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#extracurricular-activities">Activities & Awards</a></li>
-            <li><a href="#contact-me">Contact Me</a></li>
+            <li><a href="#contact-me">Contact me</a></li>
         </ul>
     </nav>
 
     <main>
         <section id="about">
             <h2>About Me</h2>
-            <p><strong>Strong Digital Transformation and Innovation Leadership:</strong><br> 
-            Successfully led the digital transformation of the family business at age 18, standardizing inventory, sales, performance, and cash flow management, and expanded physical stores to two regions through TikTok live streaming and WeChat community integration.</p>
-            
-            <p><strong>Extensive Strategy Consulting Experience:</strong><br> 
-            Acted as a strategic advisor for leading enterprises and projects at Cushman & Wakefield, deeply involved in planning and implementing large projects, developing differentiated growth strategies and market entry plans.</p>
-            
-            <p><strong>Entrepreneurship and Marketing Excellence:</strong><br> 
-            Founded EnglishGo, an online English teaching platform at age 19, identifying market needs and developing differentiated products, implementing multi-platform marketing strategies to improve user conversion rates.</p>
-            
-            <p><strong>International Perspective and Educational Background:</strong><br> 
-            With a global academic background spanning China, Canada, Australia, and Singapore, recipient of multiple scholarships and awards, possessing solid foundational knowledge and broad outlook.</p>
-            
-            <div class="resume-text">Resume:</div>
-            <a href="ZiyanWang Resume.pdf">Download My Resume</a>
+            <div class="about-content">
+                <div>
+                    <p><strong>Digital Strategist | Global Business Innovator</strong><br>
+                    Born in 2000, I drive growth through digital-first solutions and cross-industry expertise.</p>
+        
+                    <div class="core-competencies">
+                        <p><strong>Core Competencies</strong><br>
+                        • Revitalized traditional businesses via TikTok/WeChat integration, achieving 25%+ operational efficiency<br>
+                        • Delivered strategic insights for <strong>Cushman & Wakefield</strong> (real estate) and <strong>ABB</strong> (aviation sustainability)</p>
+                        
+                        <p><strong>Global Profile</strong><br>
+                        • Educated across <strong>China, Canada, Australia, Singapore</strong><br>
+                        • MSc Management & CEMS MIM (USYD/NUS) | Dean's List (Top 1%)<br>
+                        • Bilingual in EN/CN | Vice Chancellor Scholar (2x)</p>
+                    </div>
+        
+                    <div class="resume-text">Resume:</div>
+                    <a href="ZiyanWang Resume.pdf">Download My Resume</a>
+                </div>
+                <img src="shenghuozhao4.jpg" alt="Ziyan Wang" class="about-photo">
+            </div>
         </section>
 
         <section id="academic-portfolio">
@@ -443,17 +476,17 @@
             <ul>
                 <li class="skill-category">
                     <strong>Music</strong>
-                    <a href="Music.mp4">Piano Video</a>
-                    <a href="Portatone.pdf">Grade 10 Electronic Organ Certificate issued by China Musicians Association</a>
+                    <a href="Music.mp4">Piano</a>
+                    <a href="Portatone.pdf">Grade 10 Electronic Keyboard Certificate issued by China Musicians Association</a>
                 </li>
                 <li class="skill-category">
                     <strong>Dance</strong>
-                    <a href="Dance1.mp4">Street Dance Video</a>
-                    <a href="Dance2.mp4">Urban Dance Video</a>
+                    <a href="Dance1.mp4">Urban</a>
+                    <a href="Dance2.mp4">Hip-hop</a>
                 </li>
                 <li class="skill-category">
                     <strong>Japanese</strong>
-                    <a href="Japanese.mp4">Talking Video</a>
+                    <a href="Japanese.mp4">Speaking</a>
                 </li>
                 <li class="skill-category">
                     <strong>Tableau</strong>
@@ -483,18 +516,30 @@
                     <p class="activity-caption">Dean's List of Excellence</p>
                 </div>
                 <div class="activity-item" onclick="showModal(this)">
-                    <img src="extracurricular5.png" alt="Student Club">
-                    <p class="activity-caption">Student Club</p>
-                </div>
-                <div class="activity-item" onclick="showModal(this)">
                     <img src="extracurricular6.png" alt="Charities Foundation">
                     <p class="activity-caption">Charities Aid Foundation</p>
+                </div>
+                <div class="activity-item" onclick="showModal(this)">
+                    <img src="Awards List.jpg" alt="Charities Foundation">
+                    <p class="activity-caption">Awards List</p>
+                </div>
+                <div class="activity-item" onclick="showModal(this)">
+                    <img src="Reference Letter From SJTU.jpg" alt="Charities Foundation">
+                    <p class="activity-caption">Reference Letter From SJTU</p>
+                </div>
+                <div class="activity-item" onclick="showModal(this)">
+                    <img src="Scholarship From Uadelaide.jpg" alt="Charities Foundation">
+                    <p class="activity-caption">Scholarship From UAdelaide</p>
+                </div>
+                <div class="activity-item" onclick="showModal(this)">
+                    <img src="Scholarship From Ualberta.jpg" alt="Charities Foundation">
+                    <p class="activity-caption">Scholarship From UAlberta</p>
                 </div>
             </div>
         </section>
 
         <section id="contact-me">
-            <h2>Contact Me</h2>
+            <h2>Contact me</h2>
             <div class="contact-grid">
                 <div class="contact-card">
                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
