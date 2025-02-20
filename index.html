@@ -322,23 +322,67 @@
             margin-top: 60px;
         }
 
-        .resume-text {
-            font-size: 1.4em;
-            margin: 25px 0 15px;
+        /* 新增文件链接样式 */
+        .file-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 8px;
+            background: rgba(155, 183, 212, 0.1);
+            border: 1px solid rgba(15, 76, 129, 0.15);
             color: var(--mckinsey-blue);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            width: 100%;
+            max-width: 600px;
         }
 
-        a[href$=".pdf"], a[href$=".mp4"] {
-            display: inline-block;
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: var(--mckinsey-accent);
-            color: var(--mckinsey-blue);
-            transition: transform 0.3s ease;
-        }
-
-        a[href$=".pdf"]:hover, a[href$=".mp4"]:hover {
+        .file-link:hover {
+            background: rgba(155, 183, 212, 0.2);
             transform: translateY(-2px);
+            box-shadow: 0 3px 12px rgba(15, 76, 129, 0.15);
+        }
+
+        .file-icon {
+            font-size: 1.2em;
+            margin-right: 12px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .pdf-icon { color: #e74c3c; }
+        .mp4-icon { color: #3498db; }
+
+        /* 调整列表样式 */
+        #academic-portfolio ul,
+        #work-portfolio ul,
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #academic-portfolio li,
+        #work-portfolio li {
+            margin: 12px 0;
+        }
+
+        .skill-category {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(245, 245, 245, 0.9);
+            border-radius: 8px;
+            border: 1px solid rgba(15, 76, 129, 0.1);
+        }
+
+        .skill-category > strong {
+            display: block;
+            font-size: 1.1em;
+            color: var(--mckinsey-blue);
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(15, 76, 129, 0.1);
         }
 
         .about-content {
@@ -350,7 +394,7 @@
 
         .about-photo {
             width: 300px;
-            height: 382px; /* 根据1264×1609比例计算 */
+            height: 382px;
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(15, 76, 129, 0.15);
@@ -394,6 +438,16 @@
                 height: auto;
                 max-width: 300px;
                 margin: 0 auto;
+            }
+
+            .file-link {
+                padding: 10px 15px;
+                font-size: 0.95em;
+            }
+            
+            .file-icon {
+                font-size: 1em;
+                margin-right: 10px;
             }
         }
     </style>
@@ -445,7 +499,10 @@
                     </div>
         
                     <div class="resume-text">Resume:</div>
-                    <a href="ZiyanWang Resume.pdf">Download My Resume</a>
+                    <a href="ZiyanWang Resume.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Download My Resume
+                    </a>
                 </div>
                 <img src="shenghuozhao4.jpg" alt="Ziyan Wang" class="about-photo">
             </div>
@@ -454,20 +511,60 @@
         <section id="academic-portfolio">
             <h2>Academic Portfolio</h2>
             <ul>
-                <li><a href="BYDs Path to Globalization.pdf">BYDs Path to Globalization</a></li>
-                <li><a href="Tech Frontiers in Healthcare.pdf">Tech Frontiers in Healthcare</a></li>
-                <li><a href="Magic fit techology pitch.pdf">Magic Fit Techology Pitch</a></li>
-                <li><a href="Has South Africa really been better governed after becoming a democracy?.pdf">Has South Africa Really Been Better Governed After Becoming a Democracy?</a></li>
-                <li><a href="Patpet.pdf">Patpet-Revolutionising Health & Wellbeing of Our Four-leg Families</a></li>
+                <li>
+                    <a href="BYDs Path to Globalization.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        BYDs Path to Globalization
+                    </a>
+                </li>
+                <li>
+                    <a href="Tech Frontiers in Healthcare.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Tech Frontiers in Healthcare
+                    </a>
+                </li>
+                <li>
+                    <a href="Magic fit techology pitch.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Magic Fit Techology Pitch
+                    </a>
+                </li>
+                <li>
+                    <a href="Has South Africa really been better governed after becoming a democracy?.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        South Africa Governance Analysis
+                    </a>
+                </li>
+                <li>
+                    <a href="Patpet.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Pet Health Innovation Project
+                    </a>
+                </li>
             </ul>
         </section>
 
         <section id="work-portfolio">
             <h2>Work Portfolio</h2>
             <ul>
-                <li><a href="ABB/Sustainability & Digitalization for the Aviation Industry.pdf">ABB/Sustainability & Digitalization for the Aviation Industry</a></li>
-                <li><a href="Leading Enterprise Project Review for the Yulin Agricultural Mall Planning and Consulting Project.pdf">Leading Enterprise Project Review for the Yulin Agricultural Mall Planning and Consulting Project</a></li>
-                <li><a href="Research Service Sample Report on the Chengdu South Apartment Market.pdf">Research Service Sample Report on the Chengdu South Apartment Market</a></li>
+                <li>
+                    <a href="ABB/Sustainability & Digitalization for the Aviation Industry.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Aviation Industry Sustainability Report
+                    </a>
+                </li>
+                <li>
+                    <a href="Leading Enterprise Project Review for the Yulin Agricultural Mall Planning and Consulting Project.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Agricultural Mall Planning Review
+                    </a>
+                </li>
+                <li>
+                    <a href="Research Service Sample Report on the Chengdu South Apartment Market.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Chengdu Apartment Market Analysis
+                    </a>
+                </li>
             </ul>
         </section>
 
@@ -476,22 +573,43 @@
             <ul>
                 <li class="skill-category">
                     <strong>Music</strong>
-                    <a href="Music.mp4">Piano</a>
-                    <a href="Portatone.pdf">Grade 10 Electronic Keyboard Certificate issued by China Musicians Association</a>
+                    <a href="Music.mp4" class="file-link">
+                        <i class="fas fa-file-video file-icon mp4-icon"></i>
+                        Piano Performance
+                    </a>
+                    <a href="Portatone.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Grade 10 Keyboard Certification
+                    </a>
                 </li>
                 <li class="skill-category">
                     <strong>Dance</strong>
-                    <a href="Dance1.mp4">Hip-hop</a>
-                    <a href="Dance2.mp4">Urban</a>
+                    <a href="Dance1.mp4" class="file-link">
+                        <i class="fas fa-file-video file-icon mp4-icon"></i>
+                        Hip-hop Performance
+                    </a>
+                    <a href="Dance2.mp4" class="file-link">
+                        <i class="fas fa-file-video file-icon mp4-icon"></i>
+                        Urban Dance Showcase
+                    </a>
                 </li>
                 <li class="skill-category">
                     <strong>Japanese</strong>
-                    <a href="Japanese.mp4">Speaking</a>
+                    <a href="Japanese.mp4" class="file-link">
+                        <i class="fas fa-file-video file-icon mp4-icon"></i>
+                        Japanese Speaking Demo
+                    </a>
                 </li>
                 <li class="skill-category">
                     <strong>Tableau</strong>
-                    <a href="Tableau certificate1.pdf">Certificate of Analyzing Data</a>
-                    <a href="Tableau certificate2.pdf">Certificate of Creating Dashboards</a>
+                    <a href="Tableau certificate1.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Data Analysis Certification
+                    </a>
+                    <a href="Tableau certificate2.pdf" class="file-link">
+                        <i class="fas fa-file-pdf file-icon pdf-icon"></i>
+                        Dashboard Design Certification
+                    </a>
                 </li>
             </ul>
         </section>
